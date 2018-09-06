@@ -1,0 +1,197 @@
+// // 1. Import the initial variables
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// 2. Set your own initial variables
+// $navbar-height:220rem;
+$navbar-padding-vertical: 1rem;
+$navbar-padding-horizontal: 2rem;
+$navbar-background-color: black;
+$navbar-item-color: $grey-light;
+$navbar-item-hover-color: white;
+$navbar-item-hover-background-color: black;
+// 6. Import the rest of Bulma
+@import "~bulma/bulma";
+
+$navbar-height: 5.25rem;
+
+body, button, input, select, textarea {
+    font-family: Helvetica;
+}
+
+section.section {
+  margin-top: $navbar-height;
+}
+.posts-filters {
+  position: absolute;
+  top: $navbar-height;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  border-bottom-width: .2rem;
+  border-bottom-style: solid;
+  line-height: 1;
+  padding-top: 1rem;
+  display: block;
+  text-align: right;
+  font-weight: 600;
+}
+
+button.navbar-item {
+  @extend a.navbar-item;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.main-search {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    font-size: 2rem;
+    color: white;
+
+    /* flex stuff*/
+    display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-flex-direction: row;
+     -ms-flex-direction: row;
+     flex-direction: row;
+     -webkit-flex-wrap: nowrap;
+     -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     -webkit-justify-content: space-between;
+     -ms-flex-pack: justify;
+     justify-content: space-between;
+     -webkit-align-content: stretch;
+     -ms-flex-line-pack: stretch;
+     align-content: stretch;
+     -webkit-align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
+    &__input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      font-size: inherit;
+      padding: 1rem 2rem;
+      color: inherit;
+      outline: none;
+
+      /* flex stuff */
+      -webkit-order: 0;
+      -ms-flex-order: 0;
+      order: 0;
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+    }
+    &__close {
+      height: 50px!important;
+      max-height: 50px!important;
+      max-width: 50px!important;
+      min-height: 50px!important;
+      min-width: 50px!important;
+      width: 50px!important;
+
+      /* flex stuff */
+      -webkit-order: 0;
+      -ms-flex-order: 0;
+      order: 0;
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+    }
+}
+
+.sd-title, .sd-content {
+    display: none;
+}
+
+.vertical-posts {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    &>* {
+      -webkit-order: 0;
+   -ms-flex-order: 0;
+   order: 0;
+   -webkit-flex: 0 1 auto;
+   -ms-flex: 0 1 auto;
+   flex: 0 1 auto;
+   -webkit-align-self: auto;
+   -ms-flex-item-align: auto;
+   align-self: auto;
+    }
+  }
+
+.post-card {
+  display: block;
+  position: relative;
+  &__overlay {
+    position: absolute;
+  }
+  &__text {
+    color: black;
+    background-color: white;
+    margin: 4rem 2rem;
+    padding: .2rem .5rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__category {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+  }
+  &__title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &__image {
+    object-fit: cover;
+    width: 100%;
+  }
+  &--half-height {
+    .post-card__image {
+      object-fit: cover;
+      width: 100%;
+    }
+    .post-card__text {
+      display: none;
+    }
+  }
+}
