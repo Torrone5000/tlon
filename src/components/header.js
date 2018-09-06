@@ -12,11 +12,10 @@ const Header = ({ siteTitle }) => (
         title="Home"
       >
       <img src={logo} alt={siteTitle} />
-
       </Link>
     </div>
     <div className="navbar-menu">
-        <Navbar />
+      <Navbar />
     </div>
   </nav>
 )

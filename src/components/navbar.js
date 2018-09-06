@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import MainSearchInput from "../components/main_search";
 
 class Navbar extends React.Component {
+  _isMounted = false;
+
   constructor() {
     super()
     this.state = {
@@ -44,11 +46,20 @@ class Navbar extends React.Component {
     }
   }
 
+  componentDidMount = () => {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount = () => {
+    this._isMounted = false;
+  }
   showSearch = () => {
+    if (!this._isMounted) return false;
     this.setState({ searchBarShown: true });
   }
 
   hideSearch = () => {
+    if (!this._isMounted) return false;
     this.setState({ searchBarShown: false });
   }
   render() {
@@ -66,7 +77,7 @@ class Navbar extends React.Component {
           </Link>
         )}
         <button className="navbar-item" onClick={this.showSearch}>Cerca</button>
-      
+
         <MainSearchInput shown={this.state.searchBarShown} buttonOnClick={this.hideSearch}/>
       </div>
     )

@@ -2,10 +2,12 @@
   "name": "tlon",
   "description": "Gatsby default starter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Giuseppe Solinas <gsgiuseppe99@gmail.com>",
   "dependencies": {
     "bulma": "^0.7.1",
+    "dotenv": "^6.0.0",
     "gatsby": "next",
+    "gatsby-image": "next",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",
@@ -13,7 +15,6 @@
     "gatsby-plugin-sharp": "next",
     "gatsby-source-wordpress": "next",
     "gatsby-transformer-sharp": "next",
-    "gatsby-image": "next",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0"

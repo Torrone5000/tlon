@@ -1,9 +1,9 @@
+require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: 'Tlon',
     siteUrl: 'https://www.tlon.it',
     description: 'Filosofia e Immaginazione',
-    cdn_url: 'https://az49qzzsn.cloudimg.io/'
   },
   plugins: [
     'gatsby-transformer-sharp',

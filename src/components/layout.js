@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import 'bulma/css/bulma.css'
 
 import Header from './header'
-import './layout.css'
 import '../styles/main.scss'
 
 const Layout = ({ children }) => (

@@ -1,15 +1,17 @@
 import React from 'react'
-// import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import PostsList from '../components/posts_list'
 import PostsFilter from '../components/posts_filter'
-const IndexPage = (data) => (
-  <Layout>
-    <PostsFilter />
-    <PostsList posts={data.data.allWordpressPost} />
-  </Layout>
-)
+const IndexPage = (data) => {
+  console.log('Index.js', data.length)
+  return (
+    <Layout>
+      <PostsFilter />
+      <PostsList posts={data.data.allWordpressPost} />
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query homeQuery {

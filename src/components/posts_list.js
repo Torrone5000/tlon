@@ -2,15 +2,12 @@ import React from "react";
 import PostsIterator from './posts_iterator'
 
 class PostsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: this.props.posts.edges.sort(function(a, b){
-        if (a.node.acf === null || b.node.acf === null) {
-          return b.date - a.date;
-        }
-        return b.node.acf.priority - a.node.acf.priority}),
-    }
+  getPosts = (posts) => {
+    return posts.edges.sort(function(a, b){
+      if (a.node.acf === null || b.node.acf === null) {
+        return b.date - a.date;
+      }
+      return b.node.acf.priority - a.node.acf.priority})
   }
 
   splitArrayIntoChunks(arr, chunkLen){
@@ -22,10 +19,11 @@ class PostsList extends React.Component {
       return chunkList
   }
 
-  render = () => {
-    let postsChunks = this.splitArrayIntoChunks(this.state.posts, 7);
+  render() {
+    let postsChunks = this.splitArrayIntoChunks(this.getPosts(this.props.posts), 7);
+    console.log('posts_list.js', postsChunks.length);
     return (
-      <div id="posts_list">
+      <div className="post-list">
         {postsChunks.map((chunk, i) =>
           <PostsIterator posts={chunk} key={i}/>
         )}
